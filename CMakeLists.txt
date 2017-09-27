@@ -1,0 +1,68 @@
+
+add_executable(clang-rename 
+	ClangRename.cpp
+	USRFinder.cpp
+	USRFindingAction.cpp
+	USRLocFinder.cpp
+	RenamingAction.cpp
+  )
+
+target_link_libraries(clang-rename
+clangTooling
+clangIndex
+clangFormat
+clangToolingCore
+clangFrontendTool
+clangFrontend
+clangDriver
+clangSerialization
+clangCodeGen
+clangParse
+clangSema
+clangStaticAnalyzerFrontend
+clangStaticAnalyzerCheckers
+clangStaticAnalyzerCore
+clangAnalysis
+clangARCMigrate
+clangRewrite
+clangRewriteFrontend
+clangEdit
+clangAST
+clangLex
+clangASTMatchers
+clangBasic
+clang
+llvm
+version
+)
+#[[
+  clangTooling
+  clangFrontend
+  clangRewrite
+  clangToolingCore
+  clangBasic
+  clang
+  llvm
+  )
+clangTooling
+clangFrontendTool
+clangFrontend
+clangDriver
+clangSerialization
+clangCodeGen
+clangParse
+clangSema
+clangStaticAnalyzerFrontend
+clangStaticAnalyzerCheckers
+clangStaticAnalyzerCore
+clangAnalysis
+clangARCMigrate
+clangRewrite
+clangRewriteFrontend
+clangEdit
+clangAST
+clangLex
+clangBasic
+clang
+llvm
+]]
