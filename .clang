@@ -1,0 +1,3 @@
+-I/mingw64/include
+-I.
+-std=c++11

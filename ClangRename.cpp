@@ -155,7 +155,8 @@ int main(int argc, const char **argv) {
     exit(1);
   }
 
-  auto Files = OP.getSourcePathList();
+  
+  const std::vector<std::string>& Files = OP.getSourcePathList();
   tooling::RefactoringTool Tool(OP.getCompilations(), Files);
   rename::USRFindingAction FindingAction(SymbolOffsets, QualifiedNames);
   Tool.run(tooling::newFrontendActionFactory(&FindingAction).get());

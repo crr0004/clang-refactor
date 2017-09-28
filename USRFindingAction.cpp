@@ -33,6 +33,7 @@
 #include <set>
 #include <string>
 #include <vector>
+#include <stdio.h>
 
 using namespace llvm;
 
@@ -152,6 +153,7 @@ private:
     DiagnosticsEngine &Engine = Context.getDiagnostics();
     const FileID MainFileID = SourceMgr.getMainFileID();
 
+	fprintf(stdout, "Qualified name: %s\n", QualifiedName);
     if (SymbolOffset >= SourceMgr.getFileIDSize(MainFileID)) {
       ErrorOccurred = true;
       unsigned InvalidOffset = Engine.getCustomDiagID(

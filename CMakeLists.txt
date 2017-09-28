@@ -1,4 +1,7 @@
+project(clang-refractor)
+cmake_minimum_required(VERSION 3.6)
 
+link_directories(${CMAKE_SOURCE_DIR})
 add_executable(clang-rename 
 	ClangRename.cpp
 	USRFinder.cpp
@@ -7,7 +10,14 @@ add_executable(clang-rename
 	RenamingAction.cpp
   )
 
+add_subdirectory(samplecode)
+
 target_link_libraries(clang-rename
+	clang_all_shared
+llvm
+version
+)
+#[[
 clangTooling
 clangIndex
 clangFormat
@@ -32,10 +42,7 @@ clangLex
 clangASTMatchers
 clangBasic
 clang
-llvm
-version
-)
-#[[
+
   clangTooling
   clangFrontend
   clangRewrite
